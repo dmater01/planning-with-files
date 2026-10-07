@@ -849,6 +849,7 @@ class HermesFirstClassTests(unittest.TestCase):
             self.assertEqual(plan_dir.name, status["plan_id"])
             self.assertEqual("autonomous gate", status["mode"])
             self.assertTrue(status["attested"])
+            self.assertEqual("Phase 1", status["current_phase"])
 
     def test_init_plan_refuses_hard_linked_active_pointer(self) -> None:
         with self._workspace() as root:

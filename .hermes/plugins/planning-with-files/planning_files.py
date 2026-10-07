@@ -280,6 +280,8 @@ def extract_current_phase(task_plan: str) -> str:
                 candidate = next_line.strip()
                 if not candidate or candidate.startswith("<!--"):
                     continue
+                if candidate.casefold() == "name the phase currently being worked on.":
+                    continue
                 if candidate.endswith("-->") or candidate.startswith("WHAT:") or candidate.startswith("WHY:") or candidate.startswith("EXAMPLE:"):
                     continue
                 return candidate
